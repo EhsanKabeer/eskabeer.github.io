@@ -1,12 +1,12 @@
-# Deploy Vite build to GitHub Pages (project site: username.github.io/Portfolio_website)
-# For user site (username.github.io): remove the "Set base for GitHub Pages" step
-#   and set base: '/' in vite.config.ts
+# Deploy Vite build to GitHub Pages
+# User site (eskabeer.github.io): base is '/' — do not set GITHUB_PAGES in workflow
+# Project site: add step "Set base for GitHub Pages" with GITHUB_PAGES=true and set base in vite.config
 
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
 
 permissions:
   contents: read
@@ -33,8 +33,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Set base for GitHub Pages
-        run: echo "GITHUB_PAGES=true" >> $GITHUB_ENV
+      # Uncomment next 2 lines for project site (e.g. username.github.io/Portfolio_website):
+      # - name: Set base for GitHub Pages
+      #   run: echo "GITHUB_PAGES=true" >> $GITHUB_ENV
 
       - name: Build
         run: npm run build
