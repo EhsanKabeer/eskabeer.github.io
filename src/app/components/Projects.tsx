@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Github, ChevronLeft, ChevronRight, Smartphone } from 'lucide-react';
 
+const base = import.meta.env.BASE_URL;
+
 const projects = [
   {
     id: 1,
     title: 'Insta485',
     description: 'Instagram-style full-stack web app (client-side).',
-    images: ['/insta445imgs/1.png', '/insta445imgs/2.png', '/insta445imgs/3.png'],
+    images: [`${base}insta445imgs/1.png`, `${base}insta445imgs/2.png`, `${base}insta445imgs/3.png`],
     projectUrl: 'https://github.com/EhsanKabeer/p3-insta485-clientside',
     githubUrl: 'https://github.com/EhsanKabeer/p3-insta485-clientside',
     showGithub: true,
@@ -16,7 +18,7 @@ const projects = [
     id: 2,
     title: 'ChatHub',
     description: 'Full-stack real-time messaging app inspired by Discord. React, Node/Express, Socket.io, MongoDB. Servers, text channels, DMs, live typing and presence.',
-    images: ['/dicordCloneImgs/1.png', '/dicordCloneImgs/2.png', '/dicordCloneImgs/3.png', '/dicordCloneImgs/4.png', '/dicordCloneImgs/5.png'],
+    images: [`${base}dicordCloneImgs/1.png`, `${base}dicordCloneImgs/2.png`, `${base}dicordCloneImgs/3.png`, `${base}dicordCloneImgs/4.png`, `${base}dicordCloneImgs/5.png`],
     projectUrl: 'https://github.com/EhsanKabeer/Discord-clone',
     githubUrl: 'https://github.com/EhsanKabeer/Discord-clone',
     showGithub: true,
@@ -25,7 +27,7 @@ const projects = [
     id: 3,
     title: 'Flockr',
     description: 'Full-stack Twitter clone. Next.js 14, TypeScript, Tailwind, Firebase, NextAuth. Tweets, likes, retweets, comments, follow system, real-time feed.',
-    images: ['/FlockrImgs/1.png', '/FlockrImgs/2.png', '/FlockrImgs/3.png', '/FlockrImgs/4.png', '/FlockrImgs/5.png'],
+    images: [`${base}FlockrImgs/1.png`, `${base}FlockrImgs/2.png`, `${base}FlockrImgs/3.png`, `${base}FlockrImgs/4.png`, `${base}FlockrImgs/5.png`],
     projectUrl: 'https://github.com/EhsanKabeer/Flockr',
     githubUrl: 'https://github.com/EhsanKabeer/Flockr',
     showGithub: true,
@@ -34,7 +36,7 @@ const projects = [
     id: 4,
     title: 'Prayr',
     description: 'Published iOS app for prayer tracking and focus. Prayer times, reminders, app blocking during prayer, progress dashboard. 450+ ratings (5 stars), 3,000+ downloads, recently launched on the Play Store.',
-    images: ['/PrayrImgs/1.jpg', '/PrayrImgs/2.jpg', '/PrayrImgs/3.jpg', '/PrayrImgs/4.jpg', '/PrayrImgs/5.jpg'],
+    images: [`${base}PrayrImgs/1.jpg`, `${base}PrayrImgs/2.jpg`, `${base}PrayrImgs/3.jpg`, `${base}PrayrImgs/4.jpg`, `${base}PrayrImgs/5.jpg`],
     projectUrl: 'https://apps.apple.com/us/app/prayr-salah-focus/id6752878561',
     githubUrl: '',
     showGithub: false,
