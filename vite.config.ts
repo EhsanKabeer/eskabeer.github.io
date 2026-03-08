@@ -4,8 +4,9 @@ import tailwindcss from "@tailwindcss/vite"
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // For GitHub Pages: use base '/REPO_NAME/' for project sites, or '/' for username.github.io
-  base: process.env.GITHUB_PAGES === 'true' ? '/Portfolio_website/' : '/',
+  // Use relative base so assets load correctly on GitHub Pages (avoids blank white screen)
+  // For project site (username.github.io/RepoName): set GITHUB_PAGES=true and use base '/RepoName/'
+  base: process.env.GITHUB_PAGES === 'true' ? '/Portfolio_website/' : './',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
