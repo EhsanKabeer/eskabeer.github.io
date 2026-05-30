@@ -117,3 +117,14 @@ After the first successful run, your site will be at the URL shown in the repo�
 |------------------------|------------------------|---------------------|------------------------------|
 | User/org site          | `username.github.io`   | `'/'`               | `https://username.github.io` |
 | Project site           | `Portfolio_website`    | `'/Portfolio_website/'` | `https://username.github.io/Portfolio_website` |
+
+### Troubleshooting 404 ("There isn't a GitHub Pages site here")
+
+1. **Set source to GitHub Actions**  
+   Repo → **Settings** → **Pages**. Under "Build and deployment", set **Source** to **GitHub Actions** (not "Deploy from a branch"), then save.
+
+2. **Check that the workflow ran**  
+   Repo → **Actions**. Open the latest "Deploy to GitHub Pages" run. If it failed (red X), fix the error and push again; the site only updates when the workflow succeeds.
+
+3. **Wait a minute**  
+   After the first successful deploy, the site can take 1–2 minutes to appear at `https://eskabeer.github.io`.
