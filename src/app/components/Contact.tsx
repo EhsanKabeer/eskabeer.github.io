@@ -4,17 +4,22 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 
+const CONTACT_EMAIL = 'eskabeer@umich.edu';
+
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    const subject = `Portfolio inquiry from ${formData.name || 'someone'}`;
+    const body = `${formData.message}\n\n— ${formData.name}${formData.email ? ` (${formData.email})` : ''}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
   };
 
   const handleChange = (
@@ -92,6 +97,15 @@ export function Contact() {
           >
             Send Message
           </Button>
+          {sent && (
+            <p className="text-center text-sm text-green-400">
+              Opening your email app... if nothing happens, reach me at{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-green-300">
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </p>
+          )}
         </form>
 
         <div className="flex justify-center gap-6 mt-8">
@@ -114,9 +128,9 @@ export function Contact() {
             <Linkedin size={24} />
           </a>
         </div>
-        <p className="mt-4 text-sm text-gray-500">
-          <a href="mailto:eskabeer@umich.edu" className="text-gray-400 hover:text-white transition-colors">
-            eskabeer@umich.edu
+        <p className="mt-4 text-center text-sm text-gray-500">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-gray-400 hover:text-white transition-colors">
+            {CONTACT_EMAIL}
           </a>
         </p>
       </div>

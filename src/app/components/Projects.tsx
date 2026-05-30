@@ -35,7 +35,7 @@ const projects = [
   {
     id: 4,
     title: 'Prayr',
-    description: 'Published iOS app for prayer tracking and focus. Prayer times, reminders, app blocking during prayer, progress dashboard. 900+ reviews, 100,000+ downloads, recently launched on the Play Store.',
+    description: 'Published iOS app for prayer tracking and focus, featuring prayer times, reminders, app blocking during prayer, and a progress dashboard. With 100,000+ downloads and a 4.8/5.0 average rating across 900+ reviews, it recently launched on the Play Store too.',
     images: [`${base}PrayrImgs/1.jpg`, `${base}PrayrImgs/2.jpg`, `${base}PrayrImgs/3.jpg`, `${base}PrayrImgs/4.jpg`, `${base}PrayrImgs/5.jpg`],
     projectUrl: 'https://apps.apple.com/us/app/prayr-salah-focus/id6752878561',
     githubUrl: '',
