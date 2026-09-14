@@ -25,17 +25,17 @@ export function Experience() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
+                  <h3 className="text-xl font-semibold tracking-tight text-white md:text-[1.4rem]">
                     {job.role}
                   </h3>
-                  <p className="mt-1 text-base text-muted">{job.company}</p>
+                  <p className="mt-1.5 font-mono-ui text-[0.8rem] text-dim">{job.company}</p>
 
                   <ul className="mt-5 space-y-3">
                     {job.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3 text-[0.95rem] leading-relaxed text-muted">
                         <span
-                          className="mt-[0.6rem] h-1 w-1 shrink-0 rounded-full"
-                          style={{ backgroundColor: 'var(--accent)' }}
+                          className="mt-[0.58rem] h-[5px] w-[5px] shrink-0 rounded-full"
+                          style={{ backgroundColor: 'var(--accent)', opacity: 0.9 }}
                         />
                         <span>{bullet}</span>
                       </li>

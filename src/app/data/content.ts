@@ -79,6 +79,8 @@ export type Project = {
   images: string[];
   /** Phone screenshots letterbox ('contain'); wide desktop captures fill the frame ('cover'). */
   fit: 'cover' | 'contain';
+  /** Visual identity only — tints the card's accent line, media glow and tagline. */
+  accent: string;
   /** Shown instead of screenshots when a project has none. */
   placeholder?: { glyph: string; caption: string };
   links: { href: string; label: string; kind: 'github' | 'appstore' | 'playstore' | 'live' }[];
@@ -102,6 +104,7 @@ export const projects: Project[] = [
     ],
     images: [1, 2, 3, 4, 5].map((n) => `${base}PrayrImgs/${n}.jpg`),
     fit: 'contain',
+    accent: '#2dd4bf',
     links: [
       {
         href: 'https://apps.apple.com/us/app/prayr-salah-focus/id6752878561',
@@ -126,6 +129,7 @@ export const projects: Project[] = [
     stack: ['React', 'Node.js', 'Express', 'Socket.io', 'MongoDB', 'JWT'],
     images: [`${base}dicordCloneImgs/0-deploys.png`],
     fit: 'cover',
+    accent: '#818cf8',
     links: [{ href: 'https://github.com/EhsanKabeer/Discord-clone', label: 'View code', kind: 'github' }],
   },
   {
@@ -138,6 +142,7 @@ export const projects: Project[] = [
     stack: ['Next.js 14', 'TypeScript', 'Tailwind', 'Firebase', 'NextAuth'],
     images: [`${base}FlockrImgs/0-feed.png`, `${base}FlockrImgs/0b-explore.png`],
     fit: 'cover',
+    accent: '#a78bfa',
     links: [{ href: 'https://github.com/EhsanKabeer/Flockr', label: 'View code', kind: 'github' }],
   },
   {
@@ -150,6 +155,7 @@ export const projects: Project[] = [
     stack: ['Java', 'Spring Boot', 'OAuth2', 'PostgreSQL', 'React', 'TypeScript', 'Docker'],
     images: [],
     fit: 'cover',
+    accent: '#34d399',
     placeholder: { glyph: '{ }', caption: 'Spring Boot · OAuth2 · Docker Compose' },
     links: [
       {
@@ -169,6 +175,7 @@ export const projects: Project[] = [
     stack: ['Python', 'Pandas', 'scikit-learn', 'Plotly', 'Jupyter'],
     images: [1, 2, 3].map((n) => `${base}NutritionImgs/${n}.png`),
     fit: 'cover',
+    accent: '#f59e0b',
     links: [
       {
         href: 'https://ehsankabeer.github.io/How-nutrition-influences-food-ratings-byEhsan/',
@@ -192,6 +199,7 @@ export const projects: Project[] = [
     stack: ['React', 'JavaScript', 'Python', 'Flask', 'REST API'],
     images: [1, 2, 3].map((n) => `${base}insta445imgs/${n}.png`),
     fit: 'cover',
+    accent: '#f472b6',
     links: [
       {
         href: 'https://github.com/EhsanKabeer/p3-insta485-clientside',
@@ -210,6 +218,7 @@ export const projects: Project[] = [
     stack: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'Stripe'],
     images: [],
     fit: 'cover',
+    accent: '#fb923c',
     placeholder: { glyph: '9', caption: 'REST · JWT · Mongoose · Stripe' },
     links: [
       {

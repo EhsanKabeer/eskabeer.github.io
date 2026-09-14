@@ -44,21 +44,14 @@ function Gallery({ project, tall }: { project: Project; tall?: boolean }) {
   if (!total) {
     return (
       <div
-        className={`relative flex ${height} items-center justify-center overflow-hidden rounded-xl`}
-        style={{
-          background:
-            'radial-gradient(80% 90% at 50% 0%, rgba(139,124,255,0.16) 0%, transparent 70%), rgba(255,255,255,0.02)',
-          border: '1px solid var(--line)',
-        }}
+        className={`accent-media relative flex ${height} items-center justify-center overflow-hidden rounded-xl`}
+        style={{ border: '1px solid var(--line)' }}
       >
         <div className="text-center">
-          <div
-            className="font-mono-ui text-5xl font-medium"
-            style={{ color: 'var(--accent-soft)', opacity: 0.75 }}
-          >
+          <div className="accent-glyph font-mono-ui text-6xl font-medium">
             {project.placeholder?.glyph}
           </div>
-          <p className="mt-4 font-mono-ui text-xs text-dim">{project.placeholder?.caption}</p>
+          <p className="mt-4 font-mono-ui text-[0.7rem] text-dim">{project.placeholder?.caption}</p>
         </div>
       </div>
     );
@@ -68,8 +61,8 @@ function Gallery({ project, tall }: { project: Project; tall?: boolean }) {
 
   return (
     <div
-      className={`group/gallery relative ${height} overflow-hidden rounded-xl`}
-      style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--line)' }}
+      className={`accent-media group/gallery relative ${height} overflow-hidden rounded-xl`}
+      style={{ border: '1px solid var(--line)' }}
     >
       {project.images.map((src, i) => (
         <div
@@ -145,8 +138,11 @@ function FeaturedProject({ project }: { project: Project }) {
   return (
     <Reveal>
       <article
-        className="card overflow-hidden p-5 md:p-7"
-        style={{ background: 'rgba(139,124,255,0.045)', borderColor: 'rgba(139,124,255,0.22)' }}
+        className="accent-card card p-5 md:p-7"
+        style={{
+          ['--card-accent' as string]: project.accent,
+          background: 'rgba(255,255,255,0.022)',
+        }}
       >
         <div className="grid gap-7 lg:grid-cols-[1.05fr_1fr] lg:items-center">
           <div>
@@ -164,15 +160,17 @@ function FeaturedProject({ project }: { project: Project }) {
               <span className="font-mono-ui text-xs text-dim">{project.period}</span>
             </div>
 
-            <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            <h3 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
               {project.title}
             </h3>
-            <p className="mt-2 text-lg text-muted">{project.tagline}</p>
+            <p className="mt-2 text-lg" style={{ color: project.accent }}>
+              {project.tagline}
+            </p>
             <p className="mt-5 text-[0.95rem] leading-relaxed text-muted">{project.description}</p>
 
             {project.metrics && (
               <div
-                className="mt-6 grid grid-cols-3 gap-4 border-y py-5"
+                className="mt-7 grid grid-cols-3 gap-4 border-y py-5"
                 style={{ borderColor: 'var(--line)' }}
               >
                 {project.metrics.map((metric) => (
@@ -213,7 +211,10 @@ function FeaturedProject({ project }: { project: Project }) {
 function ProjectCard({ project, delay }: { project: Project; delay: number }) {
   return (
     <Reveal as="article" delay={delay} className="h-full">
-      <div className="card flex h-full flex-col p-5">
+      <div
+        className="accent-card card flex h-full flex-col p-5"
+        style={{ ['--card-accent' as string]: project.accent }}
+      >
         <Gallery project={project} />
 
         <div className="flex flex-1 flex-col pt-5">
@@ -223,7 +224,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
               {project.period}
             </span>
           </div>
-          <p className="mt-1 text-sm" style={{ color: 'var(--accent-soft)' }}>
+          <p className="mt-1 text-sm" style={{ color: project.accent }}>
             {project.tagline}
           </p>
           <p className="mt-3 text-[0.9rem] leading-relaxed text-muted">{project.description}</p>

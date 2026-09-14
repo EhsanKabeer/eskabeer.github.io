@@ -29,23 +29,23 @@ export function Hero() {
           </div>
         )}
 
-        <h1 className="max-w-4xl text-5xl font-bold leading-[1.03] tracking-tight text-white sm:text-6xl md:text-7xl">
+        <h1 className="text-[3rem] font-bold leading-[1.05] tracking-tight text-white sm:text-[4rem] md:text-[4.5rem]">
           {profile.name}
         </h1>
 
-        <p className="mt-5 max-w-3xl text-xl leading-snug text-white/90 md:text-2xl">
+        <p className="mt-4 max-w-3xl text-lg leading-snug text-white/90 md:text-xl">
           <span className="accent-text font-semibold">{profile.role}</span>
           <span className="text-muted"> · {profile.school}</span>
         </p>
 
-        <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+        <p className="mt-7 max-w-xl text-[0.95rem] leading-relaxed text-muted md:text-base">
           {profile.intro}
         </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-3">
           <button
             onClick={() => go('projects')}
-            className="rounded-xl px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+            className="rounded-full px-5 py-2.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
             style={{
               background: 'linear-gradient(100deg, var(--accent) 0%, #6d5ef0 100%)',
               boxShadow: '0 8px 30px -12px rgba(139,124,255,0.8)',
@@ -55,10 +55,10 @@ export function Hero() {
           </button>
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium text-white transition-colors"
-            style={{ border: '1px solid var(--line-strong)', background: 'rgba(255,255,255,0.03)' }}
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-colors"
+            style={{ border: '1px solid var(--line-strong)', background: 'transparent' }}
           >
-            <Mail size={16} />
+            <Mail size={15} />
             Email me
           </a>
           <div className="flex items-center gap-1 sm:ml-2">
