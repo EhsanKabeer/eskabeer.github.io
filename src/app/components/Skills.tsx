@@ -1,30 +1,35 @@
-const skills = [
-  'C',
-  'C++',
-  'JavaScript',
-  'TypeScript',
-  'HTML',
-  'CSS',
-  'Swift',
-  'Python',
-  'MongoDB',
-  'Firebase',
-];
+import { skills } from '../data/content';
+import { Reveal } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 
 export function Skills() {
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Skills & Technologies</h2>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {skills.map((skill) => (
-            <div
-              key={skill}
-              className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 rounded-xl px-6 py-8 text-center hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105"
-            >
-              <span className="text-lg font-medium">{skill}</span>
-            </div>
+    <section id="skills" className="relative px-5 py-24 md:px-8 md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeading
+          eyebrow="Toolkit"
+          title="Skills & technologies"
+          description="What I reach for day to day, grouped by how I actually use it."
+        />
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {skills.map((group, index) => (
+            <Reveal key={group.group} delay={index * 90}>
+              <div className="card h-full p-6">
+                <h3 className="text-sm font-semibold tracking-tight text-white">{group.group}</h3>
+                <div
+                  className="my-4 h-px w-10"
+                  style={{ backgroundColor: 'var(--accent)', opacity: 0.7 }}
+                />
+                <ul className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li key={item} className="chip">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
